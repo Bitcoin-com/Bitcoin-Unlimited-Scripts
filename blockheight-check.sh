@@ -12,11 +12,11 @@ currentminedblock=$(/usr/local/bin/bitcoin-cli -rpcuser=$rpcuser -rpcpassword=$r
 # This was tested on testnet. Set a proper height for mainnet
 if [ "$blockheight" -ge "1092300" ]; then
     if [ "$currentmaxblock" -lt "2000000" ]; then
-        /usr/local/bin/bitcoin-cli -rpcuser=$rpcuser -rpcpassword=$rpcpassword setexcessiveblock 9000000 10
+        /usr/local/bin/bitcoin-cli -rpcuser=$rpcuser -rpcpassword=$rpcpassword setexcessiveblock 2000000 12
 	# If you have a script for changing the coinbase message, set it here
     fi
     if [ "$currentminedblock" -lt "2000000" ]; then
-        /usr/local/bin/bitcoin-cli -rpcuser=$rpcuser -rpcpassword=$rpcpassword setminingmaxblock 4000000
+        /usr/local/bin/bitcoin-cli -rpcuser=$rpcuser -rpcpassword=$rpcpassword setminingmaxblock 2000000
 	# If you have a script for changing the coinbase message, set it here
     fi
 fi
